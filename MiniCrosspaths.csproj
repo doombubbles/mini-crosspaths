@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <RootNamespace>MiniCrosspaths</RootNamespace>
+        <Configurations>Debug;Release</Configurations>
+        <Nullable>enable</Nullable>
+        <AssemblyName>MiniCrosspaths</AssemblyName>
+        <LangVersion>preview</LangVersion>
+        <Optimize>False</Optimize>
+        <DebugType>embedded</DebugType>
+
+        <Dependencies>PathsPlusPlus</Dependencies>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Content Include=".github\workflows\build.yml"/>
+    </ItemGroup>
+
+    <Import Project="..\btd6.targets"/>
+</Project>
