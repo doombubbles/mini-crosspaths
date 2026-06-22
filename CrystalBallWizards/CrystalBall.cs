@@ -8,10 +8,12 @@ using Il2CppAssets.Scripts.Models.Towers.Behaviors.Emissions.Behaviors;
 using Il2CppAssets.Scripts.Models.Towers.Projectiles;
 using Il2CppAssets.Scripts.Models.Towers.Projectiles.Behaviors;
 using Il2CppAssets.Scripts.Simulation.Towers;
+using Il2CppAssets.Scripts.Unity;
 using Il2CppAssets.Scripts.Unity.Bridge;
 using Il2CppAssets.Scripts.Unity.UI_New.InGame.TowerSelectionMenu.TowerSelectionMenuThemes;
 using Newtonsoft.Json.Linq;
 using PathsPlusPlus;
+using UnityEngine;
 
 namespace MiniCrosspaths.CrystalBallWizards;
 
@@ -147,7 +149,7 @@ public class CrystalBallMutator : ModMutator
 
 public class CrystalBallTSM : ModTsmTheme
 {
-    public override string BaseTheme => "Default";
+    public override string BaseTheme => "SelectPointInput";
 
     public TSMButton ToggleCrystalBall { get; private set; } = null!;
 
@@ -169,6 +171,12 @@ public class CrystalBallTSM : ModTsmTheme
             : VanillaSprites.GuildedMagicUpgradeIcon);
 
         ToggleCrystalBall.gameObject.SetActive(tower.Def.appliedUpgrades.Contains(UpgradeType.GuidedMagic));
+
+        ToggleCrystalBall.GetComponent<RectTransform>().anchoredPosition = new Vector2(RightArrowX, AboveArrowsY +
+            (tower.Def.appliedUpgrades?.Contains(UpgradeType.WallOfFire) == true &&
+             tower.Def.appliedUpgrades?.Contains(UpgradeType.GuidedMagic) == true
+                ? DefaultButtonSpacing
+                : 0));
     }
 
     public override void OnButtonPressed(BaseTSMTheme theme, TowerToSimulation tower, string buttonId)
