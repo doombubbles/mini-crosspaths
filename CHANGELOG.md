@@ -9,8 +9,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.1] - 2026-06-22
+
 - Improved Ultimate Crosspathing support for Crystal Ball Tower Selection Menu Theme with Guided Magic Wall of Fire targeting
 
 ## [1.0.0] - 2026-05-26
 
 - Initial Release
+
+[unreleased]: https://github.com/doombubbles/mini-crosspaths/compare/1.0.1...HEAD
+[1.0.1]: https://github.com/doombubbles/mini-crosspaths/compare/f33fa92eb9fed55bd1152d38e18c14a56d2be4b6...1.0.1
