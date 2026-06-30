@@ -14,7 +14,8 @@ public static class ModHelperData
         """;
 
     public const string RepoOwner = "doombubbles";
-    public const string RepoName = "mini-crosspaths";
+    public const string PrevRepoName = "mini-crosspaths";
+    public const string RepoName = "MiniCrosspaths";
 
-    public const string Dependencies = "doombubbles/paths-plus-plus";
+    public const string Dependencies = "doombubbles/PathsPlusPlus";
 }
